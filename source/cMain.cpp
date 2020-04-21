@@ -34,7 +34,9 @@ void cMain::buttonClickClear(wxCommandEvent& event)
 
 void cMain::buttonClickRemove(wxCommandEvent& event)
 {
+	if (toDoList->GetSelection() != wxNOT_FOUND)
 		toDoList->Delete(toDoList->GetSelection());
+	else wxMessageBox(wxT("Select a task to remove"), wxT("ERROR"));
 	event.Skip();
 }
 
