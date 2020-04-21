@@ -13,7 +13,7 @@ cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Simple To-Do-List using wxWidgets",
 	remove = new wxButton(this, 110, "Remove", wxPoint(10, 320), wxSize(50, 20));
 	clear = new wxButton(this, 100, "Clear", wxPoint(160, 320), wxSize(50, 20));
 	exit = new wxButton(this, 90, "Exit", wxPoint(350, 12), wxSize(50, 20));
-	toDoList = new wxListBox(this, wxID_ANY, wxPoint(10, 12), wxSize(200, 300));
+	toDoList = new wxCheckListBox(this, wxID_ANY, wxPoint(10, 12), wxSize(200, 300));
 }
 
 cMain::~cMain()
@@ -34,7 +34,7 @@ void cMain::buttonClickClear(wxCommandEvent& event)
 
 void cMain::buttonClickRemove(wxCommandEvent& event)
 {
-	toDoList->Delete(toDoList->GetSelection());
+		toDoList->Delete(toDoList->GetSelection());
 	event.Skip();
 }
 
